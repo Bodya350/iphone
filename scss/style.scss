@@ -1,0 +1,491 @@
+
+@font-face {
+	font-family: 'HelveticaNeueBold ';
+	
+	src: url("../fonts/HelveticaNeueBold.eot");
+	src: local("O"), url("../fonts/HelveticaNeueBold.woff") format("woff"), 
+			url("../fonts/HelveticaNeueBold.ttf") format("truetype"), 
+			url("../fonts/HelveticaNeueBold.svg") format("svg");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeue ';
+	
+	src: url("../fonts/HelveticaNeueLight.eot");
+	src: local("O"), url("../fonts/HelveticaNeueLight.woff") format("woff"), 
+			url("../fonts/HelveticaNeueLight.ttf") format("truetype"), 
+			url("../fonts/HelveticaNeueLight.svg") format("svg");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeue ';
+	
+	src: url("../fonts/HelveticaNeueUltraLight.eot");
+	src: local("O"), url("../fonts/HelveticaNeueUltraLight.woff") format("woff"), 
+			url("../fonts/HelveticaNeueUltraLight.ttf") format("truetype"), 
+			url("../fonts/HelveticaNeueUltraLight.svg") format("svg");
+	font-weight: 200;
+	font-style: normal;
+}
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+/*--------------------*/
+//Переменные
+$fz:60px;
+$color_1:red;
+
+//Шаблоны
+%tplborder{
+	border-bottom: 5px dashed red;
+	font-size: 30px;
+	letter-spacing: 20px;
+	font-weight: 700;
+}
+
+//Миксины
+@mixin fontz($f,$c,$s) {
+	font-size: $f;
+	color:$c;
+	letter-spacing: $s;
+}
+//Шрифт
+
+$fm: 'HelveticaNeue ';
+//Шаблон списка
+%li{
+		font-size: 20px;
+		font-family: $fm;
+		line-height: 36px;
+		color: #273d46;
+
+}
+%li_galochka{
+		background-image: url("../img/icons/li.svg");
+		background-repeat: no-repeat;
+		background-position: left;
+		padding: 0px 0px 0px 20px;
+//Шаблон кнопки
+}
+%key_block{
+	
+	display: inline-block;
+	background-color: #80b7b3;
+	width: 200px;
+	height: 40px;
+	padding: 0px 0px 0px 30px;
+	border-radius: 30px;
+	margin: 0px 100px 125px 20px;
+	background-image: url("../img/icons/arrow.svg");
+	background-repeat: no-repeat;
+	background-position: 150px 12px;
+	box-shadow: 3px 4px 20px #c5d4d3;
+
+
+}
+
+%key_text{
+	font-family: $fm;
+	font-size: 14px;
+	letter-spacing: 2.8px;
+	line-height: 40px;
+	text-transform: uppercase;
+	color: #fff;
+	
+	
+	
+}
+
+
+//--------------------------------------------------------------
+body{
+	padding: 150px 0px 0px 0px;
+}
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+}
+.content {
+	flex: 1 1 auto;
+	
+}
+
+.conteiner {
+	max-width: 1920px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.row{
+	padding: 0px 0px 0px 150px;
+	
+}
+
+.text {
+	font-family:$fm;
+	font-weight: 200;
+	color: #515151;
+	font-size: 36px;
+	margin: 50px 0px 150px 150px;
+	max-width: 500px;
+	
+	@media (max-width:1492px){
+		font-size: 24px;
+		margin: 10px 0px 150px 150px;
+		max-width: 280px;
+	}
+	@media (max-width:1192px) {
+		font-size: 24px;
+		max-width: 280px;
+		margin: 20px 0px 150px -130px;
+		
+	}
+		
+}
+.title {
+	font-family:$fm;
+	font-weight: 200;
+	color: #a46b28;
+	font-size: 94px;
+	line-height: 100px;
+	margin: 0px 0px 0px 150px;
+	
+	@media (max-width:1492px){
+		font-size: 54px;
+	}
+	@media (max-width:1192px) {
+		font-size: 54px;
+		margin: 20px 0px 0px -130px;
+	}
+}
+.apple {
+	padding: 0px 0px 50px 150px ;
+	max-width: 350px;
+	max-height: 100px;
+	cursor: pointer;
+	
+	@media (max-width:1192px) {		
+		margin: 20px 0px 0px -270px;
+		
+	}
+}
+
+.iphone {
+	max-width: 60%;
+	margin: -450px 0px 0px 30px;
+	position: absolute;
+	@media (max-width:1492px) {
+		max-width: 50%;
+		margin: -380px 0px 0px 30px;
+
+}
+@media (max-width:992px) {
+	max-width: 80%;
+	margin: -320px 0px 0px -50px;
+	
+	
+}
+}
+// Блок 2 -----------------------------------------------------
+.begin {
+	background-color: #e3caad;
+	padding: 0px 0px 20px 0px;
+	max-height: 715px;
+	&__row {
+		display: flex;
+		justify-content: space-around;
+		
+		@media (max-width:992px) {
+			flex-direction: column;
+			
+			text-align: center;
+		}
+	}
+
+	&__left {
+		
+	}
+
+	&__title {		
+		font-family: $fm;
+		font-weight: 700;
+		font-size: 18px;
+	
+		padding: 100px 0px 50px 0px;
+		color: #7c6b57;
+		
+	}
+
+	&__text {
+		font-size: 18px;
+		font-family: $fm;
+		color: #7c6b57;
+		font-weight: 300;
+		line-height: 28px;
+		
+	}
+
+	&__right {
+		
+		& img{
+			
+			max-width: 350px;
+			max-height: 50px;
+			margin: 30px 0px 35px 200px;
+			cursor: pointer;
+			
+			@media (max-width:992px) {
+				margin: 0 auto;
+			}
+		}
+		
+		
+	}
+	
+}
+// Блок 3 ---------------------------------------------------
+.sait {
+
+	background-color: #eeeeee;
+	margin: 0px 0px 0px -100px;
+	&__row {
+		display: flex;
+		justify-content: space-around;
+		@media(max-width: 992px){			
+			
+			flex-direction: column-reverse;
+			align-items: center;
+			text-align: center;
+			} 
+	
+}
+	&__left {		
+		margin: 30px 0px 10px 190px;
+		@media(max-width: 992px){
+			margin: 30px 0px 10px 0px;
+		}
+	}
+
+	&__title {
+
+	font-family:$fm;
+	font-weight: 200;
+	color: #a46b28;
+	font-size: 64px;
+	line-height: 60px;
+
+	}
+
+	&__text {
+		font-size: 18px;
+		font-family:$fm;
+		color: #7c6b57;
+		font-weight: 300;
+		line-height: 28px;
+		padding: 40px 0px  ;
+	}
+	
+	&__read {
+		display: inline-block;
+		font-size: 18px;
+		color: #757575;
+		min-width: 200px;
+		min-height: 70px;
+		background-color: #d8d8d8;
+		border-radius: 5px;
+		text-align: center;
+		padding: 25px 0px;
+		
+		&:hover{
+			background-color: #e2e1e1;
+			transition-property: all;
+			transition-duration: 800ms;
+		}
+	}
+
+
+	&__right {
+
+		padding: 70px 0px 0px 0px;		
+		
+		& img {
+		max-width: 50%;
+		
+		
+	}
+}
+}
+// Блок 4 ------------------------------------------------------
+.center {
+	text-align: center;
+	background-image: url('..//img/background.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center center;
+	
+
+	
+	
+	&__title {
+		font-family:$fm;
+		font-weight: 200;
+		font-size: 84px;
+		line-height: 60px;
+		color: #fff;
+		padding: 100px 0px 0px 0px;
+		
+	}
+
+	&__text {
+		font-size: 24px;
+		font-family:$fm;
+		color: #c4c4c4;
+		font-weight: 300;
+		line-height: 28px;
+		padding: 50px 0px;
+		
+	
+	}
+
+	&__com {
+		color: #c4c4c4;
+		text-decoration:underline;
+		
+
+	}
+	
+	&__img{
+		
+}
+
+}
+// Блок 5 -----------------------------------------------------
+.finish {
+	background-color: #a16927;
+	text-align: center;
+	
+	&__row {
+		display: flex;
+		justify-content: space-evenly;
+		@media(max-width:992px){
+			flex-direction: column;
+		}
+	}
+
+	&__left {
+	}
+
+	&__title {
+	font-family:$fm;
+	font-weight: 200;
+	color: #fff;
+	font-size: 64px;
+	line-height: 60px;
+	padding: 150px 0px 50px 0px;
+	}
+
+	&__text {
+		font-size: 18px;
+		font-family:$fm;
+		color: #b48755;
+		font-weight: 300;
+		line-height: 28px;
+		padding: 150px 0px 50px 0px;
+	}
+
+	&__read {
+		display: inline-block;
+		font-size: 18px;
+		color: #fff;
+		min-width: 200px;
+		min-height: 70px;
+		background-color: #88561b;
+		border-radius: 5px;
+		text-align: center;
+		padding: 25px 0px;
+		margin: 0px 0px 150px 0px;
+	
+		&:hover{
+			background-color: #8b5a22;
+			transition-property: all;
+			transition-duration: 800ms;
+		}
+	
+	
+	}
+
+}
+// Блок 6 --------------------------------------------------------
+.footer { 
+	display: flex;
+	justify-content: space-around;
+	padding: 0px 0px 0px 200px;
+	&__name {
+		font-family: $fm;
+		font-weight: 200;
+		font-size: 36px;
+		color: #a46b28;
+		padding: 100px 0px;
+		line-height: 24px;
+		& span{
+			font-size: 28px;
+			color: #515151;
+			@media (max-width:1192px){
+				font-size: 18px;
+				
+		}
+	}
+		@media (max-width:1192px) {
+			font-size: 28px;
+			line-height: 18px;
+		}
+	}
+}
+.text-footer {
+	font-family: $fm;
+	padding: 120px 0px;
+	& span{
+		padding: 0px 40px 0px 0px ;
+		color: #a46b28;
+		font-weight: 300;
+		font-size: 18px;
+		@media (max-width:1192px) {
+			font-size: 14px;
+			padding: 0px 20px 0px 0px ;
+		}
+	}
+}
+.facebook {
+	padding: 0px 40px 0px 0px ;
+	font-size: 18px;
+	color: #0f4991;
+	@media (max-width:1192px) {
+		font-size: 14px;
+		padding: 0px 20px 0px 0px ;
+	}
+}
+.twitter {
+	padding: 0px 40px 0px 0px ;
+	font-size: 18px;
+	color: #00aad5;
+	@media (max-width:1192px) {
+		font-size: 14px;
+		padding: 0px 20px 0px 0px;
+	}
+}
+.img-footer {
+	margin: 120px 0px 0px 0px;
+}
+.app {
+	max-width: 100px;
+	cursor: pointer;
+}
+.android {
+	max-width: 100px;
+	cursor: pointer;
+}
+
+
